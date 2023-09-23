@@ -1140,7 +1140,7 @@ def zs_provide_new_detections(config, TEST="") -> List[Detection]:
         mlog.debug("Document index: {}".format(doc["_index"]))
 
         # Check if building block alert (kibana.alert.building_block_type: "default")
-        if dict_get(doc["_source"], "kibana.alert.building_block_type", False):
+        if dict_get(doc["_source"]["kibana.alert.rule.parameters"], "building_block_type", False):
             mlog.info("Skipping building block alert.")
             continue
 
