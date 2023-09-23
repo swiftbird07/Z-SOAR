@@ -1139,6 +1139,11 @@ def zs_provide_new_detections(config, TEST="") -> List[Detection]:
         # print the document index
         mlog.debug("Document index: {}".format(doc["_index"]))
 
+        # Check if building block alert (kibana.alert.building_block_type: "default")
+        if dict_get(doc["_source"], "kibana.alert.building_block_type") == "default":
+            mlog.debug("Skipping building block alert.")
+            continue
+
         # Create a new detection object
         rule_list = []
         doc_dict = doc["_source"]
