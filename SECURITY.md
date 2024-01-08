@@ -9,5 +9,5 @@
 
 ## Reporting a Vulnerability
 
-Please report vulnerabilties responsible via PM to @maof97.
+Please report vulnerabilties responsible via PM to @swiftbird07.
 Thank you!
